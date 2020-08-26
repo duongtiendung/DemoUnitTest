@@ -17,4 +17,10 @@ func TestWelcome(t *testing.T) {
 	if writer.Code != 200 {
 		t.Errorf("Response code is %v", writer.Code)
 	}
+
+	s := writer.Body.String()
+
+	if s != "Welcome to our website" {
+		t.Errorf("Response body string is: %v", writer.Body.String())
+	}
 }
